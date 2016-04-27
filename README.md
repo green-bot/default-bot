@@ -4,54 +4,142 @@
 
 # Default Bot
 
-## Introduction
-This is an Introduction
+# Summary
+This bot is just like an 'under construction' page for a website.  Until
+a better bot can be installed here, this one will take the message and
+forward it to the owner of the account. It has no settings.
 
 
-## Requires
-Greenbot.rb holds all of the convenience libraries we need to handle
-incoming stuff
+# Installation
+This bot can be installed on any GreenBot server through the web UI, or
+by through the command line at the greenbot-core root with a
+a 'npm install default-bot'
 
-
-  
-
-```
-
-require "./lib/greenbot.rb"
-require "timeout"
-
-
-```
-
-
-
-
-
-
-
-## Start of the Script
-Ask to see what we need
+This bot requires a ruby installation, 2.0 or older
+# Code
+# required files
+Greenbot.rb is a convenience library for IO
 
 
   
 
 ```
-tell "Thank you for texting us. This KISST bot is currently under construction. If you are looking for the owner of this number, I can take a message."
-if confirm("Would you like someone to contact you?")
+require './lib/greenbot.rb'
+require 'timeout'
+
+
+```
+
+
+
+
+
+
+
+# Start of the Script
+Ask user if they want us to contact the owner of the bot
+
+
+  
+
+```
+tell 'Thank you for texting us. This KISST bot is currently under construction. If you are looking for the owner of this number, I can take a message.'
+if confirm('Would you like someone to contact you?')
+
+```
+
+
+
+
+
+
+
+If so, set the contact me to true and save it in the collected data
+
+
+  
+
+```
   contact_me = true
-  contact_me.remember("contact_me")
-  name = ask("When we call, who should we ask for?")
-  name.remember("who_to_ask_for")
-  if confirm("Is there another number we should try?")
-    better_number = ask("Please enter that number with an area code")
-    better_number.remember("better_number")
+  contact_me.remember('contact_me')
+
+
+```
+
+
+
+
+
+
+
+Ask for the persons name, and remember it.
+
+
+  
+
+```
+  name = ask('When we call, who should we ask for?')
+  name.remember('who_to_ask_for')
+
+
+```
+
+
+
+
+
+
+
+Ask for another number, collect it if you can.
+
+
+  
+
+```
+  if confirm('Is there another number we should try?')
+    better_number = ask('Please enter that number with an area code')
+    better_number.remember('better_number')
   end
 end
-if confirm("Would you like to leave a message?")
-  issue = note("How can we help you? Please use as many messages as you need.")
-  tell "Thank you. We will forward the message."
+
+
+```
+
+
+
+
+
+
+
+Ask if they want us to take a message for hte owner. Use the note
+function so we can take multiple messages.
+
+
+  
+
+```
+if confirm('Would you like to leave a message?')
+  note = note('How can we help you? Please use as many messages as you need.')
+  note.remember('note')
+  tell 'Thank you. We will forward the message.'
 end
-tell "Goodbye."
+
+
+```
+
+
+
+
+
+
+
+And that's it. Say good bye
+
+
+  
+
+```
+tell 'Goodbye.'
 
 
 ```

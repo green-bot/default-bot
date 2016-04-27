@@ -22,17 +22,23 @@
                 <a class="pilcrow" href="#section-1">&#182;</a>
               </div>
               <h1 id="default-bot">Default Bot</h1>
-<h2 id="introduction">Introduction</h2>
-<p>This is an Introduction</p>
-<h2 id="requires">Requires</h2>
-<p>Greenbot.rb holds all of the convenience libraries we need to handle
-incoming stuff</p>
+<h1 id="summary">Summary</h1>
+<p>This bot is just like an ‘under construction’ page for a website.  Until
+a better bot can be installed here, this one will take the message and
+forward it to the owner of the account. It has no settings.</p>
+<h1 id="installation">Installation</h1>
+<p>This bot can be installed on any GreenBot server through the web UI, or
+by through the command line at the greenbot-core root with a
+a ‘npm install default-bot’</p>
+<p>This bot requires a ruby installation, 2.0 or older</p>
+<h1 id="code">Code</h1>
+<h1 id="required-files">required files</h1>
+<p>Greenbot.rb is a convenience library for IO</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>
-<span class="hljs-keyword">require</span> <span class="hljs-string">"./lib/greenbot.rb"</span>
-<span class="hljs-keyword">require</span> <span class="hljs-string">"timeout"</span></pre></div></div>
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">require</span> <span class="hljs-string">'./lib/greenbot.rb'</span>
+<span class="hljs-keyword">require</span> <span class="hljs-string">'timeout'</span></pre></div></div>
             
         </li>
         
@@ -43,27 +49,99 @@ incoming stuff</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-2">&#182;</a>
               </div>
-              <h2 id="start-of-the-script">Start of the Script</h2>
-<p>Ask to see what we need</p>
+              <h1 id="start-of-the-script">Start of the Script</h1>
+<p>Ask user if they want us to contact the owner of the bot</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>tell <span class="hljs-string">"Thank you for texting us. This KISST bot is currently under construction. If you are looking for the owner of this number, I can take a message."</span>
-<span class="hljs-keyword">if</span> confirm(<span class="hljs-string">"Would you like someone to contact you?"</span>)
-  contact_me = <span class="hljs-keyword">true</span>
-  contact_me.remember(<span class="hljs-string">"contact_me"</span>)
-  name = ask(<span class="hljs-string">"When we call, who should we ask for?"</span>)
-  name.remember(<span class="hljs-string">"who_to_ask_for"</span>)
-  <span class="hljs-keyword">if</span> confirm(<span class="hljs-string">"Is there another number we should try?"</span>)
-    better_number = ask(<span class="hljs-string">"Please enter that number with an area code"</span>)
-    better_number.remember(<span class="hljs-string">"better_number"</span>)
+            <div class="content"><div class='highlight'><pre>tell <span class="hljs-string">'Thank you for texting us. This KISST bot is currently under construction. If you are looking for the owner of this number, I can take a message.'</span>
+<span class="hljs-keyword">if</span> confirm(<span class="hljs-string">'Would you like someone to contact you?'</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>If so, set the contact me to true and save it in the collected data</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  contact_me = <span class="hljs-keyword">true</span>
+  contact_me.remember(<span class="hljs-string">'contact_me'</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p>Ask for the persons name, and remember it.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  name = ask(<span class="hljs-string">'When we call, who should we ask for?'</span>)
+  name.remember(<span class="hljs-string">'who_to_ask_for'</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p>Ask for another number, collect it if you can.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  <span class="hljs-keyword">if</span> confirm(<span class="hljs-string">'Is there another number we should try?'</span>)
+    better_number = ask(<span class="hljs-string">'Please enter that number with an area code'</span>)
+    better_number.remember(<span class="hljs-string">'better_number'</span>)
   <span class="hljs-keyword">end</span>
-<span class="hljs-keyword">end</span>
-<span class="hljs-keyword">if</span> confirm(<span class="hljs-string">"Would you like to leave a message?"</span>)
-  issue = note(<span class="hljs-string">"How can we help you? Please use as many messages as you need."</span>)
-  tell <span class="hljs-string">"Thank you. We will forward the message."</span>
-<span class="hljs-keyword">end</span>
-tell <span class="hljs-string">"Goodbye."</span></pre></div></div>
+<span class="hljs-keyword">end</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
+              </div>
+              <p>Ask if they want us to take a message for hte owner. Use the note
+function so we can take multiple messages.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">if</span> confirm(<span class="hljs-string">'Would you like to leave a message?'</span>)
+  note = note(<span class="hljs-string">'How can we help you? Please use as many messages as you need.'</span>)
+  note.remember(<span class="hljs-string">'note'</span>)
+  tell <span class="hljs-string">'Thank you. We will forward the message.'</span>
+<span class="hljs-keyword">end</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-7">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-7">&#182;</a>
+              </div>
+              <p>And that’s it. Say good bye</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>tell <span class="hljs-string">'Goodbye.'</span></pre></div></div>
             
         </li>
         

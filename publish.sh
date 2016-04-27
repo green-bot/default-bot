@@ -1,6 +1,7 @@
 #!/bin/sh
 npm version patch
 docco bot.rb -o .
+mv bot.html index.html
 docco -l plain-markdown -o md bot.rb
 mv md/bot.html ./README.md
 rm -Rf md
