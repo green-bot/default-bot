@@ -1,0 +1,11 @@
+[{
+  "default_cmd": "npm start",
+  "default_path": "./node_modules/default-bot",
+  "default_settings": [ ],
+  "desc": "A place holder bot, sort of like under construction",
+  "icon_class": "information",
+  "name": "default-bot"
+  "owner_cmd": "",
+  "short_desc": "A place holder bot, sort of like under construction",
+  "repo_link": "git@github.com/green-bot/default-bot.git"
+}]

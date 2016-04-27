@@ -1,0 +1,22 @@
+{
+  "name": "default-bot",
+  "description":"A place holder bot, sort of like under construction",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "bundle exec ruby bot.rb",
+    "install": "bundle install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com/green-bot/default-bot.git"
+  },
+  "keywords": [
+    "green-bot",
+    "greenbot",
+    "bot",
+    "bashbot"
+  ],
+  "author": "C. Thomas Bailey",
+  "license": "MIT",
+  "version": "0.1.0"
+}
