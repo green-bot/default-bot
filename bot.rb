@@ -1,9 +1,18 @@
-#!/usr/bin/env ruby
+## Default Bot
+#
+### Introduction
+# This is an Introduction
 #
 #
+### Requires
+# Greenbot.rb holds all of the convenience libraries we need to handle
+# incoming stuff
+
 require "./lib/greenbot.rb"
 require "timeout"
 
+### Start of the Script
+# Ask to see what we need
 tell "Thank you for texting us. This KISST bot is currently under construction. If you are looking for the owner of this number, I can take a message."
 if confirm("Would you like someone to contact you?")
   contact_me = true

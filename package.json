@@ -1,10 +1,11 @@
 {
   "name": "default-bot",
-  "description":"A place holder bot, sort of like under construction",
+  "description": "A place holder bot, sort of like under construction",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "bundle exec ruby bot.rb",
-    "install": "bundle install"
+    "install": "bundle install",
+    "doc": "docco bot.rb && docco -l plain-markdown -o md bot.rb && mv md/bot.html ./README.md && rm -Rf md"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,8 @@
   ],
   "author": "C. Thomas Bailey",
   "license": "MIT",
-  "version": "0.1.0"
+  "version": "0.1.0",
+  "devDependencies": {
+    "gulp": "3.9.1"
+  }
 }
