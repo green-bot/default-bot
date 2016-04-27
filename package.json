@@ -5,7 +5,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "bundle exec ruby bot.rb",
     "install": "bundle install",
-    "doc": "docco bot.rb -o . && docco -l plain-markdown -o md bot.rb && mv md/bot.html ./README.md && rm -Rf md"
+    "doc": "generate_docs.sh"
   },
   "repository": {
     "type": "git",
