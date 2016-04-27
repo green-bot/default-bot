@@ -16,9 +16,8 @@ by through the command line at the greenbot-core root with a
 a 'npm install default-bot'
 
 This bot requires a ruby installation, 2.0 or older
-# Code
-# required files
-Greenbot.rb is a convenience library for IO
+# Annoated Ruby Code
+./lib/greenbot.rb is a convenience library for IO. Used for note, confirm..
 
 
   
@@ -36,7 +35,6 @@ require 'timeout'
 
 
 
-# Start of the Script
 Ask user if they want us to contact the owner of the bot
 
 

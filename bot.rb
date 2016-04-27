@@ -12,13 +12,11 @@
 # a 'npm install default-bot'
 #
 # This bot requires a ruby installation, 2.0 or older
-## Code
-## required files
-# Greenbot.rb is a convenience library for IO
+## Annoated Ruby Code
+# ./lib/greenbot.rb is a convenience library for IO. Used for note, confirm..
 require './lib/greenbot.rb'
 require 'timeout'
 
-## Start of the Script
 # Ask user if they want us to contact the owner of the bot
 tell 'Thank you for texting us. This KISST bot is currently under construction. If you are looking for the owner of this number, I can take a message.'
 if confirm('Would you like someone to contact you?')
