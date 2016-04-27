@@ -16,7 +16,8 @@ by through the command line at the greenbot-core root with a
 a 'npm install default-bot'
 
 This bot requires a ruby installation, 2.0 or older
-# Annoated Ruby Code
+# Annoated Bot Code
+## Full source in git repo
 ./lib/greenbot.rb is a convenience library for IO. Used for note, confirm..
 
 
